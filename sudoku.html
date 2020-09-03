@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sudoku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sudoku.css" />
+    <script src="sudoku.js"></script>
+    <script src="solver.js"></script>
+    <script src="view.js"></script>
+  </head>
+  <body>
+      <h1>Sudoku</h1>
+      <div id="sudoku-board"></div>
+      <button onclick="next()">Next</button>
+      <script>
+          createHtmlBoard('sudoku-board')
+
+          let gameBoard = solve(newBoard([
+            '53  7    ',
+            '6  195   ',
+            ' 98    6 ',
+            '8   6   3',
+            '4  8 3  1',
+            '7   2   6',
+            ' 6    28 ',
+            '   419  5',
+            '    8  79'
+          ]))
+
+          updateHtmlBoard(gameBoard.board)
+
+          const next = () => {
+            gameBoard = gameBoard.next()
+            updateHtmlBoard(gameBoard.board)
+            
+            if (gameBoard.strategy) {
+                console.log(gameBoard.strategy)
+                console.log(gameBoard.detail)
+                highlightCells(gameBoard.highlights)
+            }
+          }
+      </script>
+  </body>
+</html>

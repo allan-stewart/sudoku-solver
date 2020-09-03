@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+td {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    font-size: 18px;
+    text-align: center;
+}
+
+.candidates {
+    color: #666;
+    font-size: 11px;
+}
+
+.emphasis {
+    background-color: lightgreen;
+}
+
+.notice {
+    background-color: lightyellow;
+}
